@@ -16,23 +16,43 @@ body{
     background:#f4f7fb;
 }
 
-/* TOPO */
+/* =========================
+BARRA URGÊNCIA PISCANDO
+========================= */
 
 .topbar{
     background:#e63946;
     color:white;
     text-align:center;
     padding:12px;
-    font-weight:600;
+    font-weight:700;
+    animation:blink 1.2s infinite;
+}
+
+@keyframes blink{
+    0%{opacity:1}
+    50%{opacity:0.6}
+    100%{opacity:1}
+}
+
+/* =========================
+ANIMAÇÃO SCROLL
+========================= */
+
+.fade{
+    opacity:0;
+    transform:translateY(30px);
+    transition:0.8s;
+}
+
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
 }
 
 /* HERO */
 
 .hero{
-    display:flex;
-    flex-wrap:wrap;
-    align-items:center;
-    justify-content:center;
     padding:70px 8%;
     background:linear-gradient(135deg,#0ea5e9,#2563eb);
     color:white;
@@ -41,14 +61,12 @@ body{
 
 .hero h1{
     font-size:42px;
-    margin:0;
 }
 
 .hero p{
     font-size:18px;
-    margin-top:15px;
-    line-height:1.6;
     max-width:600px;
+    margin:auto;
 }
 
 /* BOTÃO */
@@ -73,9 +91,14 @@ body{
 
 /* SEÇÕES */
 
-.benefits, .proof, .offer, .guarantee{
+section{
     padding:70px 8%;
     text-align:center;
+}
+
+h2{
+    font-size:32px;
+    margin-bottom:30px;
 }
 
 /* BENEFÍCIOS */
@@ -84,19 +107,13 @@ body{
     background:#f8fafc;
 }
 
-h2{
-    font-size:32px;
-    margin-bottom:30px;
-    color:#0f172a;
-}
-
-.benefit-grid{
+.grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:20px;
 }
 
-.benefit{
+.card{
     background:white;
     padding:22px;
     border-radius:14px;
@@ -108,13 +125,6 @@ h2{
 
 .proof{
     background:#eef2ff;
-}
-
-.proof-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:18px;
-    margin-top:30px;
 }
 
 .proof-btn{
@@ -134,16 +144,14 @@ h2{
     margin:40px 8%;
 }
 
-.old-price{
+.old{
     text-decoration:line-through;
     opacity:0.8;
-    font-size:20px;
 }
 
 .price{
     font-size:46px;
     font-weight:700;
-    margin:10px 0;
     color:#22c55e;
 }
 
@@ -157,11 +165,6 @@ h2{
     font-weight:700;
     font-size:18px;
     margin-top:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.25);
-}
-
-.secure{
-    margin-top:15px;
 }
 
 /* GARANTIA */
@@ -171,7 +174,23 @@ h2{
     margin:40px 8%;
     border-radius:18px;
     padding:50px;
-    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+}
+
+/* =========================
+NOTIFICAÇÃO VENDAS
+========================= */
+
+.notification{
+    position:fixed;
+    bottom:20px;
+    left:20px;
+    background:white;
+    padding:15px 20px;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    font-size:14px;
+    display:none;
+    z-index:999;
 }
 
 </style>
@@ -179,19 +198,19 @@ h2{
 
 <body>
 
-<!-- TOPO -->
+<!-- URGÊNCIA -->
 <div class="topbar">
-🔥 Oferta promocional encerra em <span id="countdown"></span>
+🔥 Oferta encerra em <span id="countdown"></span> — Últimas vagas
 </div>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero fade">
 
 <h1>Drive Completo de Odontologia</h1>
 
 <p>
-Mais de <strong>3.000 materiais odontológicos</strong> organizados em um único lugar.
-Cursos, PDFs, aulas e protocolos clínicos atualizados.
+Mais de <strong>3.000 materiais odontológicos</strong> organizados.
+Cursos, PDFs, protocolos clínicos e conteúdos atualizados.
 </p>
 
 <a class="btn" href="https://wa.me/5583993144870">
@@ -201,106 +220,143 @@ QUERO ACESSO AGORA
 </section>
 
 <!-- BENEFÍCIOS -->
-<section class="benefits">
+<section class="benefits fade">
 
 <h2>O que você vai receber</h2>
 
-<div class="benefit-grid">
+<div class="grid">
 
-<div class="benefit">📚 +3.000 Materiais Odontológicos</div>
-<div class="benefit">🦷 Protocolos Clínicos Atualizados</div>
-<div class="benefit">📸 Imagens, PDFs e Apostilas</div>
-<div class="benefit">🎓 Conteúdos para Faculdade e Clínica</div>
-<div class="benefit">💎 Atualizações Vitalícias</div>
-<div class="benefit">⚡ Acesso Imediato Após Pagamento</div>
+<div class="card">📚 +3.000 Materiais</div>
+<div class="card">🦷 Protocolos Clínicos</div>
+<div class="card">📸 PDFs e Apostilas</div>
+<div class="card">🎓 Conteúdo Faculdade</div>
+<div class="card">💎 Atualizações Vitalícias</div>
+<div class="card">⚡ Acesso Imediato</div>
 
 </div>
 
 </section>
 
 <!-- PROVA SOCIAL -->
-<section class="proof">
+<section class="proof fade">
 
 <h2>Quem já comprou recomenda</h2>
 
-<div class="proof-grid">
+<div class="grid">
 
-<div class="proof-btn">⭐️⭐️⭐️⭐️⭐️ Material perfeito, salvou meu semestre</div>
-<div class="proof-btn">⭐️⭐️⭐️⭐️⭐️ Vale muito mais do que o preço</div>
+<div class="proof-btn">⭐️⭐️⭐️⭐️⭐️ Salvou meu semestre</div>
+<div class="proof-btn">⭐️⭐️⭐️⭐️⭐️ Vale muito mais que o preço</div>
 <div class="proof-btn">⭐️⭐️⭐️⭐️⭐️ Muito conteúdo organizado</div>
-<div class="proof-btn">⭐️⭐️⭐️⭐️⭐️ Melhor investimento da faculdade</div>
-<div class="proof-btn">⭐️⭐️⭐️⭐️⭐️ Tem tudo que eu precisava</div>
-<div class="proof-btn">⭐️⭐️⭐️⭐️⭐️ Recomendo demais</div>
+<div class="proof-btn">⭐️⭐️⭐️⭐️⭐️ Melhor investimento</div>
 
 </div>
 
 </section>
 
 <!-- OFERTA -->
-<section class="offer">
+<section class="offer fade">
 
-<h2>Acesso Completo ao Drive</h2>
+<h2>Acesso Completo</h2>
 
-<p class="old-price">De R$ 197,00</p>
+<p class="old">De R$ 197,00</p>
 
-<p class="price">Por apenas R$ 29,90</p>
+<div class="price">Por apenas R$ 29,90</div>
 
 <a href="https://wa.me/5583993144870" class="cta">
 QUERO ACESSO IMEDIATO
 </a>
 
-<p class="secure">🔒 Compra 100% segura</p>
+<p>🔒 Compra 100% segura</p>
 
 </section>
 
 <!-- GARANTIA -->
-<section class="guarantee">
+<section class="guarantee fade">
 
-<h2>Garantia Incondicional</h2>
+<h2>Confirmado Garantia 7 Dias</h2>
 
 <p>
-Se em até 7 dias você achar que o material não vale a pena,
-devolvemos 100% do seu dinheiro.
-Sem perguntas.
+Se não gostar, devolvemos 100% do seu dinheiro.
+Sem riscos.
 </p>
 
 </section>
 
-<!-- CONTADOR -->
+<!-- NOTIFICAÇÃO -->
+<div class="notification" id="notification"></div>
+
 <script>
 
-document.addEventListener("DOMContentLoaded", function() {
+/* =====================
+CONTADOR
+===================== */
 
-    const countdownElement = document.getElementById("countdown");
+const endDate = new Date("2026-02-25T23:59:59").getTime();
 
-    const endDate = new Date("2026-02-25T23:59:59").getTime();
+function updateCountdown(){
 
-    function updateCountdown() {
+const now = new Date().getTime();
+const distance = endDate - now;
 
-        const now = new Date().getTime();
-        const distance = endDate - now;
+if(distance <= 0){
+document.getElementById("countdown").innerHTML="ENCERRADO";
+return;
+}
 
-        if (distance <= 0) {
-            countdownElement.innerHTML = "ENCERRADO";
-            return;
-        }
+const d=Math.floor(distance/(1000*60*60*24));
+const h=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+const m=Math.floor((distance%(1000*60*60))/(1000*60));
+const s=Math.floor((distance%(1000*60))/1000);
 
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+document.getElementById("countdown").innerHTML =
+d+"d "+h+"h "+m+"m "+s+"s";
 
-        countdownElement.innerHTML =
-            days + "d " +
-            hours + "h " +
-            minutes + "m " +
-            seconds + "s";
-    }
+}
 
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
+setInterval(updateCountdown,1000);
+updateCountdown();
 
+
+/* =====================
+ANIMAÇÃO SCROLL
+===================== */
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
 });
+});
+
+document.querySelectorAll(".fade").forEach(el=>{
+observer.observe(el);
+});
+
+
+/* =====================
+NOTIFICAÇÃO VENDAS
+===================== */
+
+const names=["Maria","João","Ana","Carlos","Juliana","Pedro","Fernanda","Lucas"];
+
+function showNotification(){
+
+const box=document.getElementById("notification");
+
+const name=names[Math.floor(Math.random()*names.length)];
+
+box.innerHTML="🟢 "+name+" acabou de comprar";
+
+box.style.display="block";
+
+setTimeout(()=>{
+box.style.display="none";
+},4000);
+
+}
+
+setInterval(showNotification,7000);
 
 </script>
 
