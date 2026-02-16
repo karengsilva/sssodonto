@@ -6,7 +6,41 @@
 <title>Imersão Diagnóstico Total</title>
 
 <style>
+<script>
 
+function startCountdown() {
+
+    const endDate = new Date(2026, 1, 25, 23, 59, 59).getTime();
+
+    function updateCountdown() {
+
+        const now = new Date().getTime();
+        const distance = endDate - now;
+
+        if (distance <= 0) {
+            document.getElementById("countdown").innerHTML = "ENCERRADO";
+            return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown").innerHTML =
+            days + "d " +
+            hours + "h " +
+            minutes + "m " +
+            seconds + "s";
+
+    }
+
+    setInterval(updateCountdown, 1000);
+}
+
+startCountdown();
+
+</script>
 body{
     margin:0;
     font-family: Arial, Helvetica, sans-serif;
@@ -162,3 +196,4 @@ Você receberá pelo WhatsApp.
 
 </body>
 </html>
+
