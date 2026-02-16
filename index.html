@@ -6,41 +6,7 @@
 <title>Imersão Diagnóstico Total</title>
 
 <style>
-<script>
 
-function startCountdown() {
-
-    const endDate = new Date(2026, 1, 25, 23, 59, 59).getTime();
-
-    function updateCountdown() {
-
-        const now = new Date().getTime();
-        const distance = endDate - now;
-
-        if (distance <= 0) {
-            document.getElementById("countdown").innerHTML = "ENCERRADO";
-            return;
-        }
-
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        document.getElementById("countdown").innerHTML =
-            days + "d " +
-            hours + "h " +
-            minutes + "m " +
-            seconds + "s";
-
-    }
-
-    setInterval(updateCountdown, 1000);
-}
-
-startCountdown();
-
-</script>
 body{
     margin:0;
     font-family: Arial, Helvetica, sans-serif;
@@ -48,14 +14,29 @@ body{
     color:white;
 }
 
+/* BARRA CONTADOR */
+
+.topbar{
+    background:#e50914;
+    color:white;
+    text-align:center;
+    padding:15px;
+    font-weight:bold;
+    font-size:18px;
+}
+
+/* CONTAINER */
+
 .container{
     max-width:1000px;
     margin:auto;
     padding:20px;
 }
 
+/* TEXTOS */
+
 h1{
-    font-size:40px;
+    font-size:42px;
     text-align:center;
 }
 
@@ -63,26 +44,33 @@ h2{
     color:#00ff88;
 }
 
+/* BOTÃO */
+
 .btn{
     display:inline-block;
     background:#00ff88;
     color:black;
-    padding:15px 25px;
-    border-radius:8px;
+    padding:18px 28px;
+    border-radius:10px;
     text-decoration:none;
     font-weight:bold;
     margin-top:20px;
+    font-size:18px;
 }
 
 .btn:hover{
     background:#00cc6a;
 }
 
+/* HERO */
+
 .hero{
     text-align:center;
-    padding:60px 20px;
+    padding:70px 20px;
     background:linear-gradient(180deg,#000,#111);
 }
+
+/* SEÇÕES */
 
 .section{
     padding:40px 20px;
@@ -96,6 +84,8 @@ h2{
     margin:10px 0;
 }
 
+/* FOOTER */
+
 .footer{
     text-align:center;
     padding:30px;
@@ -107,6 +97,12 @@ h2{
 </head>
 
 <body>
+
+<!-- BARRA CONTADOR -->
+<div class="topbar">
+O 3º Lote encerra em:
+<span id="countdown"></span>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -194,6 +190,44 @@ Você receberá pelo WhatsApp.
 © 2026 — Todos os direitos reservados
 </div>
 
+
+<!-- SCRIPT CONTADOR -->
+<script>
+
+function startCountdown() {
+
+    const endDate = new Date(2026, 1, 25, 23, 59, 59).getTime();
+
+    function updateCountdown() {
+
+        const now = new Date().getTime();
+        const distance = endDate - now;
+
+        if (distance <= 0) {
+            document.getElementById("countdown").innerHTML = "ENCERRADO";
+            return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown").innerHTML =
+            days + "d " +
+            hours + "h " +
+            minutes + "m " +
+            seconds + "s";
+
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+}
+
+startCountdown();
+
+</script>
+
 </body>
 </html>
-
