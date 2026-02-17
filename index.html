@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Drive Odonto Smart</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -14,16 +13,17 @@ body{
     margin:0;
     font-family:'Poppins', sans-serif;
     background:#f4f7fb;
+    color:#1e293b;
 }
 
-/* BARRA URGÊNCIA */
+/* ===== TOPBAR ===== */
 
 .topbar{
-    background:#e63946;
+    background:#ef4444;
     color:white;
     text-align:center;
     padding:12px;
-    font-weight:700;
+    font-weight:600;
     animation:blink 1.2s infinite;
 }
 
@@ -33,54 +33,52 @@ body{
     100%{opacity:1}
 }
 
-/* ANIMAÇÃO */
-
-.fade{
-    opacity:0;
-    transform:translateY(30px);
-    transition:0.8s;
-}
-
-.fade.show{
-    opacity:1;
-    transform:translateY(0);
-}
-
-/* HERO */
+/* ===== HERO ===== */
 
 .hero{
-    padding:70px 8%;
+    padding:80px 8%;
     background:linear-gradient(135deg,#0ea5e9,#2563eb);
     color:white;
     text-align:center;
 }
 
 .hero h1{
-    font-size:42px;
+    font-size:40px;
+    max-width:800px;
+    margin:auto;
 }
 
 .hero p{
     font-size:18px;
-    max-width:600px;
-    margin:auto;
+    margin-top:20px;
 }
 
-/* BOTÃO */
+.product-img{
+    width:380px;
+    max-width:95%;
+    margin-top:35px;
+    border-radius:16px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.3);
+}
 
 .btn{
     display:inline-block;
+    margin-top:30px;
     background:#22c55e;
     color:white;
-    padding:18px 34px;
-    border-radius:12px;
+    padding:18px 36px;
+    border-radius:14px;
     text-decoration:none;
     font-weight:700;
-    margin-top:25px;
     font-size:18px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+    transition:0.3s;
 }
 
-/* SEÇÕES */
+.btn:hover{
+    transform:scale(1.05);
+}
+
+/* ===== SECTIONS ===== */
 
 section{
     padding:70px 8%;
@@ -92,41 +90,30 @@ h2{
     margin-bottom:30px;
 }
 
-/* BENEFÍCIOS */
-
-.benefits{
-    background:#f8fafc;
-}
-
 .grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:20px;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:25px;
 }
 
 .card{
     background:white;
-    padding:22px;
-    border-radius:14px;
+    padding:25px;
+    border-radius:16px;
     box-shadow:0 10px 25px rgba(0,0,0,0.08);
-    font-weight:600;
+    font-weight:500;
 }
 
-/* PROVA SOCIAL */
-
-.proof{
-    background:#eef2ff;
-}
+/* ===== TESTIMONIAL ===== */
 
 .testimonial{
     background:white;
     padding:20px;
     border-radius:14px;
     box-shadow:0 10px 25px rgba(0,0,0,0.08);
-    text-align:left;
     display:flex;
     gap:15px;
-    align-items:flex-start;
+    text-align:left;
 }
 
 .testimonial img{
@@ -136,27 +123,19 @@ h2{
     object-fit:cover;
 }
 
-.testimonial-content{
-    flex:1;
-}
-
-.name{
-    font-weight:700;
-}
-
 .stars{
     color:#fbbf24;
     font-size:14px;
-    margin:4px 0;
 }
 
-/* OFERTA */
+/* ===== OFFER ===== */
 
 .offer{
     background:linear-gradient(135deg,#0ea5e9,#2563eb);
     color:white;
     border-radius:20px;
-    margin:40px 8%;
+    margin:50px 8%;
+    padding:60px;
 }
 
 .old{
@@ -165,45 +144,29 @@ h2{
 }
 
 .price{
-    font-size:46px;
+    font-size:48px;
     font-weight:700;
     color:#22c55e;
+    margin:15px 0;
 }
 
-.cta{
-    display:inline-block;
-    background:#22c55e;
-    color:white;
-    padding:18px 38px;
-    border-radius:12px;
-    text-decoration:none;
-    font-weight:700;
-    font-size:18px;
-    margin-top:20px;
-}
-
-/* GARANTIA */
+/* ===== GUARANTEE ===== */
 
 .guarantee{
     background:#ecfdf5;
-    margin:40px 8%;
-    border-radius:18px;
+    border-radius:20px;
+    margin:50px 8%;
     padding:50px;
 }
 
-/* NOTIFICAÇÃO */
+/* ===== FOOTER ===== */
 
-.notification{
-    position:fixed;
-    bottom:20px;
-    left:20px;
-    background:white;
-    padding:15px 20px;
-    border-radius:12px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+footer{
+    padding:40px;
+    background:#0f172a;
+    color:white;
+    text-align:center;
     font-size:14px;
-    display:none;
-    z-index:999;
 }
 
 </style>
@@ -216,41 +179,46 @@ h2{
 </div>
 
 <!-- HERO -->
-<section class="hero fade">
+<section class="hero">
 
-<h1>Drive Completo de Odontologia</h1>
+<h1>Drive Completo de Odontologia com +3.000 Materiais Organizados</h1>
 
 <p>
-Mais de <strong>3.000 materiais odontológicos</strong> organizados.
-Cursos, PDFs, protocolos clínicos e conteúdos atualizados.
+Protocolos clínicos, PDFs, apostilas e conteúdos atualizados para faculdade e clínica.
 </p>
 
+<img src="mockup.png" class="product-img">
+
 <a class="btn" href="https://wa.me/5583993144870">
-QUERO ACESSO AGORA
+QUERO ACESSO IMEDIATO
 </a>
+
+<p style="margin-top:15px;">
+✔ Acesso imediato • ✔ Atualizações vitalícias • ✔ Pagamento único
+</p>
 
 </section>
 
 <!-- BENEFÍCIOS -->
-<section class="benefits fade">
+<section>
 
 <h2>O que você vai receber</h2>
 
 <div class="grid">
 
-<div class="card">📚 +3.000 Materiais</div>
-<div class="card">🦷 Protocolos Clínicos</div>
-<div class="card">📸 PDFs e Apostilas</div>
-<div class="card">🎓 Conteúdo Faculdade</div>
-<div class="card">💎 Atualizações Vitalícias</div>
-<div class="card">⚡ Acesso Imediato</div>
+<div class="card">📚 +3.000 materiais odontológicos</div>
+<div class="card">🦷 Protocolos clínicos completos</div>
+<div class="card">📂 PDFs organizados por matéria</div>
+<div class="card">🎓 Conteúdo para provas</div>
+<div class="card">💎 Atualizações vitalícias</div>
+<div class="card">⚡ Acesso imediato</div>
 
 </div>
 
 </section>
 
-<!-- PROVA SOCIAL -->
-<section class="proof fade">
+<!-- DEPOIMENTOS -->
+<section>
 
 <h2>Quem já comprou recomenda</h2>
 
@@ -258,46 +226,19 @@ QUERO ACESSO AGORA
 
 <div class="testimonial">
 <img src="20.jpg">
-<div class="testimonial-content">
-<div class="name">Higor Silva</div>
+<div>
+<strong>Maria Silva</strong><br>
 <div class="stars">★★★★★</div>
-<div>Esse drive me salvou na faculdade, tem muito conteúdo organizado.</div>
+Salvou meu semestre.
 </div>
 </div>
 
 <div class="testimonial">
 <img src="23.jpg">
-<div class="testimonial-content">
-<div class="name">Marta Silvino</div>
+<div>
+<strong>João Pedro</strong><br>
 <div class="stars">★★★★★</div>
-<div>Vale muito mais que o preço. Melhor investimento que fiz.</div>
-</div>
-</div>
-
-<div class="testimonial">
-<img src="24.jpg">
-<div class="testimonial-content">
-<div class="name">Jorge Dantas</div>
-<div class="stars">★★★★★</div>
-<div>Material atualizado e fácil de achar. Recomendo demais.</div>
-</div>
-</div>
-
-<div class="testimonial">
-<img src="44.jpg">
-<div class="testimonial-content">
-<div class="name">Carlos Eduardo</div>
-<div class="stars">★★★★★</div>
-<div>Tem protocolos que nem meus professores passaram.</div>
-</div>
-</div>
-
-<div class="testimonial">
-<img src="45.jpg">
-<div class="testimonial-content">
-<div class="name">Fernanda Lima</div>
-<div class="stars">★★★★★</div>
-<div>Acesso rápido e conteúdo completo. Vale cada centavo.</div>
+Vale muito mais que o preço.
 </div>
 </div>
 
@@ -306,16 +247,16 @@ QUERO ACESSO AGORA
 </section>
 
 <!-- OFERTA -->
-<section class="offer fade">
+<section class="offer">
 
 <h2>Acesso Completo</h2>
 
 <p class="old">De R$ 197,00</p>
 
-<div class="price">Por apenas R$ 29,90</div>
+<div class="price">R$ 29,90</div>
 
-<a href="https://wa.me/5583993144870" class="cta">
-QUERO ACESSO IMEDIATO
+<a class="btn" href="https://wa.me/5583993144870">
+QUERO ACESSO AGORA
 </a>
 
 <p>🔒 Compra 100% segura</p>
@@ -323,27 +264,26 @@ QUERO ACESSO IMEDIATO
 </section>
 
 <!-- GARANTIA -->
-<section class="guarantee fade">
+<section class="guarantee">
 
-<h2>Confirmado Garantia 7 Dias</h2>
+<h2>Garantia de 7 Dias</h2>
 
 <p>
 Se não gostar, devolvemos 100% do seu dinheiro.
-Sem riscos.
+Sem risco.
 </p>
 
 </section>
 
-<div class="notification" id="notification"></div>
+<footer>
+© 2026 Drive Odonto Smart — Todos os direitos reservados
+</footer>
 
 <script>
-
-/* CONTADOR */
 
 const endDate = new Date("2026-02-25T23:59:59").getTime();
 
 function updateCountdown(){
-
 const now = new Date().getTime();
 const distance = endDate - now;
 
@@ -359,50 +299,12 @@ const s=Math.floor((distance%(1000*60))/1000);
 
 document.getElementById("countdown").innerHTML =
 d+"d "+h+"h "+m+"m "+s+"s";
-
 }
 
 setInterval(updateCountdown,1000);
 updateCountdown();
 
-/* ANIMAÇÃO */
-
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("show");
-}
-});
-});
-
-document.querySelectorAll(".fade").forEach(el=>{
-observer.observe(el);
-});
-
-/* NOTIFICAÇÃO */
-
-const names=["Maria","João","Ana","Carlos","Juliana","Pedro","Fernanda","Lucas"];
-
-function showNotification(){
-
-const box=document.getElementById("notification");
-
-const name=names[Math.floor(Math.random()*names.length)];
-
-box.innerHTML="🟢 "+name+" acabou de comprar";
-
-box.style.display="block";
-
-setTimeout(()=>{
-box.style.display="none";
-},4000);
-
-}
-
-setInterval(showNotification,7000);
-
 </script>
 
 </body>
 </html>
-
