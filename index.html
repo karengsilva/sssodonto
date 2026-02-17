@@ -16,9 +16,7 @@ body{
     background:#f4f7fb;
 }
 
-/* =========================
-BARRA URGÊNCIA PISCANDO
-========================= */
+/* BARRA URGÊNCIA */
 
 .topbar{
     background:#e63946;
@@ -35,9 +33,7 @@ BARRA URGÊNCIA PISCANDO
     100%{opacity:1}
 }
 
-/* =========================
-ANIMAÇÃO SCROLL
-========================= */
+/* ANIMAÇÃO */
 
 .fade{
     opacity:0;
@@ -82,11 +78,6 @@ ANIMAÇÃO SCROLL
     margin-top:25px;
     font-size:18px;
     box-shadow:0 10px 25px rgba(0,0,0,0.25);
-    transition:0.3s;
-}
-
-.btn:hover{
-    transform:scale(1.05);
 }
 
 /* SEÇÕES */
@@ -109,7 +100,7 @@ h2{
 
 .grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
     gap:20px;
 }
 
@@ -122,109 +113,42 @@ h2{
 }
 
 /* PROVA SOCIAL */
-<section class="proof fade">
 
-<h2>Quem já comprou recomenda</h2>
+.proof{
+    background:#eef2ff;
+}
 
-<div class="grid">
+.testimonial{
+    background:white;
+    padding:20px;
+    border-radius:14px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    text-align:left;
+    display:flex;
+    gap:15px;
+    align-items:flex-start;
+}
 
-<div class="testimonial">
+.testimonial img{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    object-fit:cover;
+}
 
-<img src="20.jpg" alt="Cliente">
+.testimonial-content{
+    flex:1;
+}
 
-<div class="testimonial-content">
+.name{
+    font-weight:700;
+}
 
-<div class="name">Maria Silva</div>
-
-<div class="stars">★★★★★</div>
-
-<div>
-Esse drive me salvou na faculdade, tem MUITO conteúdo organizado.
-</div>
-
-</div>
-
-</div>
-
-
-<div class="testimonial">
-
-<img src="23.jpg" alt="Cliente">
-
-<div class="testimonial-content">
-
-<div class="name">João Pedro</div>
-
-<div class="stars">★★★★★</div>
-
-<div>
-Vale muito mais que o preço. Melhor investimento que fiz esse ano.
-</div>
-
-</div>
-
-</div>
-
-
-<div class="testimonial">
-
-<img src="24.jpg" alt="Cliente">
-
-<div class="testimonial-content">
-
-<div class="name">Ana Carolina</div>
-
-<div class="stars">★★★★★</div>
-
-<div>
-Material atualizado e fácil de achar. Recomendo demais.
-</div>
-
-</div>
-
-</div>
-
-
-<div class="testimonial">
-
-<img src="44.jpg" alt="Cliente">
-
-<div class="testimonial-content">
-
-<div class="name">Carlos Eduardo</div>
-
-<div class="stars">★★★★★</div>
-
-<div>
-Tem protocolos que nem meus professores passaram.
-</div>
-
-</div>
-
-</div>
-
-
-<div class="testimonial">
-
-<img src="45.jpg" alt="Cliente">
-
-<div class="testimonial-content">
-
-<div class="name">Fernanda Lima</div>
-
-<div class="stars">★★★★★</div>
-
-<div>
-Acesso rápido e conteúdo completo. Vale cada centavo.
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
+.stars{
+    color:#fbbf24;
+    font-size:14px;
+    margin:4px 0;
+}
 
 /* OFERTA */
 
@@ -267,9 +191,7 @@ Acesso rápido e conteúdo completo. Vale cada centavo.
     padding:50px;
 }
 
-/* =========================
-NOTIFICAÇÃO VENDAS
-========================= */
+/* NOTIFICAÇÃO */
 
 .notification{
     position:fixed;
@@ -289,7 +211,6 @@ NOTIFICAÇÃO VENDAS
 
 <body>
 
-<!-- URGÊNCIA -->
 <div class="topbar">
 🔥 Oferta encerra em <span id="countdown"></span> — Últimas vagas
 </div>
@@ -335,10 +256,50 @@ QUERO ACESSO AGORA
 
 <div class="grid">
 
-<div class="proof-btn">⭐️⭐️⭐️⭐️⭐️ Salvou meu semestre</div>
-<div class="proof-btn">⭐️⭐️⭐️⭐️⭐️ Vale muito mais que o preço</div>
-<div class="proof-btn">⭐️⭐️⭐️⭐️⭐️ Muito conteúdo organizado</div>
-<div class="proof-btn">⭐️⭐️⭐️⭐️⭐️ Melhor investimento</div>
+<div class="testimonial">
+<img src="20.jpg">
+<div class="testimonial-content">
+<div class="name">Maria Silva</div>
+<div class="stars">★★★★★</div>
+<div>Esse drive me salvou na faculdade, tem muito conteúdo organizado.</div>
+</div>
+</div>
+
+<div class="testimonial">
+<img src="23.jpg">
+<div class="testimonial-content">
+<div class="name">João Pedro</div>
+<div class="stars">★★★★★</div>
+<div>Vale muito mais que o preço. Melhor investimento que fiz.</div>
+</div>
+</div>
+
+<div class="testimonial">
+<img src="24.jpg">
+<div class="testimonial-content">
+<div class="name">Ana Carolina</div>
+<div class="stars">★★★★★</div>
+<div>Material atualizado e fácil de achar. Recomendo demais.</div>
+</div>
+</div>
+
+<div class="testimonial">
+<img src="44.jpg">
+<div class="testimonial-content">
+<div class="name">Carlos Eduardo</div>
+<div class="stars">★★★★★</div>
+<div>Tem protocolos que nem meus professores passaram.</div>
+</div>
+</div>
+
+<div class="testimonial">
+<img src="45.jpg">
+<div class="testimonial-content">
+<div class="name">Fernanda Lima</div>
+<div class="stars">★★★★★</div>
+<div>Acesso rápido e conteúdo completo. Vale cada centavo.</div>
+</div>
+</div>
 
 </div>
 
@@ -373,14 +334,11 @@ Sem riscos.
 
 </section>
 
-<!-- NOTIFICAÇÃO -->
 <div class="notification" id="notification"></div>
 
 <script>
 
-/* =====================
-CONTADOR
-===================== */
+/* CONTADOR */
 
 const endDate = new Date("2026-02-25T23:59:59").getTime();
 
@@ -407,10 +365,7 @@ d+"d "+h+"h "+m+"m "+s+"s";
 setInterval(updateCountdown,1000);
 updateCountdown();
 
-
-/* =====================
-ANIMAÇÃO SCROLL
-===================== */
+/* ANIMAÇÃO */
 
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
@@ -424,10 +379,7 @@ document.querySelectorAll(".fade").forEach(el=>{
 observer.observe(el);
 });
 
-
-/* =====================
-NOTIFICAÇÃO VENDAS
-===================== */
+/* NOTIFICAÇÃO */
 
 const names=["Maria","João","Ana","Carlos","Juliana","Pedro","Fernanda","Lucas"];
 
@@ -453,4 +405,3 @@ setInterval(showNotification,7000);
 
 </body>
 </html>
-
